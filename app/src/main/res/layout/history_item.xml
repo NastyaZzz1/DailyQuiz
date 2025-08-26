@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="-56dp"
+    android:layout_marginTop="10dp"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/deleteHistoryBtn"
+        android:elevation="8dp"
+        android:layout_gravity="top|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:paddingStart="50dp"
+            android:paddingEnd="60dp"
+            android:text="@string/delete_text"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/blue" />
+
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="16dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="130dp"
+            android:src="@drawable/delete_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/btn"
+            app:layout_constraintEnd_toEndOf="@+id/btn"
+            app:layout_constraintTop_toTopOf="@+id/btn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/historyCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="40dp"
+        android:layout_marginTop="50dp" >
+
+        <View
+            android:id="@+id/dimOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/overlay" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="120dp"
+                android:src="@drawable/star_right_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/history_item_heading"
+                app:layout_constraintEnd_toStartOf="@id/star2"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@+id/history_item_heading"
+                app:layout_constraintTop_toTopOf="@+id/history_item_heading" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/star_right_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/star1"
+                app:layout_constraintEnd_toStartOf="@id/star3"
+                app:layout_constraintStart_toEndOf="@+id/star1"
+                app:layout_constraintTop_toTopOf="@+id/star1" />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/star_right_icon"
+                app:layout_constraintEnd_toStartOf="@id/star4"
+                app:layout_constraintStart_toEndOf="@+id/star2"
+                app:layout_constraintTop_toTopOf="@+id/star2" />
+
+            <ImageView
+                android:id="@+id/star4"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/star_right_icon"
+                app:layout_constraintEnd_toStartOf="@id/star5"
+                app:layout_constraintStart_toEndOf="@+id/star3"
+                app:layout_constraintTop_toTopOf="@+id/star3" />
+
+            <ImageView
+                android:id="@+id/star5"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/star_wrong_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/star4"
+                app:layout_constraintTop_toTopOf="@+id/star4" />
+
+            <TextView
+                android:id="@+id/history_item_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Quiz 1"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/star1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/data_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="7 июля"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/history_item_heading"
+                app:layout_constraintTop_toBottomOf="@+id/history_item_heading" />
+
+            <TextView
+                android:id="@+id/time_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="12:03"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/star5"
+                app:layout_constraintTop_toBottomOf="@+id/history_item_heading" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

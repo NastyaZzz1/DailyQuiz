@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.DailyQuiz" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/blue</item>
+        <item name="android:navigationBarColor">@color/blue</item>
+    </style>
+    <style name="Theme.DailyQuiz" parent="Base.Theme.DailyQuiz" />
+</resources>

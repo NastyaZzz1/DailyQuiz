@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RadioBtnStyleInset" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:button">@drawable/inset_select_radio</item>
+        <item name="android:background">@drawable/radio_background</item>
+        <item name="android:paddingStart">10dp</item>
+    </style>
+
+    <style name="RadioBtnStyleRight" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:button">@drawable/inset_right_radio</item>
+        <item name="android:background">@drawable/radio_background_right</item>
+        <item name="android:paddingStart">10dp</item>
+    </style>
+
+    <style name="RadioBtnStyleWrong" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:button">@drawable/inset_wrong_radio</item>
+        <item name="android:background">@drawable/radio_background_wrong</item>
+        <item name="android:paddingStart">10dp</item>
+    </style>
+</resources>
