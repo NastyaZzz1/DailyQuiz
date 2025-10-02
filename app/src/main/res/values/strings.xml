@@ -12,7 +12,8 @@
     <string name="history_text">История</string>
     <string name="delete_text">Удалить</string>
     <string name="blank_history">Вы еще не проходили ни одной викторины</string>
-
+    <string name="almost_ready">Почти готовы!</string>
+    <string name="choose_filter">Осталось выбрать категорию\n и сложность викторины.</string>
 
     <string name="perfect">Идеально!</string>
     <string name="almost_perfect">Почти идеально!</string>
@@ -27,4 +28,13 @@
     <string name="three_star">3/5 — вы на верном пути. Продолжайте тренироваться!</string>
     <string name="four_star">4/5 — очень близко к совершенству. Ещё один шаг!</string>
     <string name="five_star">5/5 — вы ответили на всё правильно. Это блестящий результат!</string>
+
+    <string-array name="difficulty">
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
+    </string-array>
+
+    <string name="category">Категория</string>
+    <string name="difficulty">Сложность</string>
 </resources>

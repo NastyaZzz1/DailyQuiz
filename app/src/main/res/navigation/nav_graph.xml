@@ -11,18 +11,15 @@
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
-            android:id="@+id/action_startFragment_to_loadFragment"
-            app:destination="@id/loadFragment">
-            <argument
-                android:name="count_questions"
-                app:argType="integer" />
-        </action>
-        <action
             android:id="@+id/action_startFragment_to_blankHistoryFragment"
             app:destination="@id/blankHistoryFragment" />
         <action
             android:id="@+id/action_startFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_filterQuizFragment"
+            app:destination="@id/filterQuizFragment">
+        </action>
     </fragment>
     <fragment
         android:id="@+id/loadFragment"
@@ -76,4 +73,20 @@
         android:name="com.nastya.dailyquiz.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/filterQuizFragment"
+        android:name="com.nastya.dailyquiz.FilterQuizFragment"
+        android:label="fragment_filter_quiz"
+        tools:layout="@layout/fragment_filter_quiz" >
+        <action
+            android:id="@+id/action_filterQuizFragment_to_loadFragment"
+            app:destination="@id/loadFragment">
+            <argument
+                android:name="questions_category_id"
+                app:argType="integer" />
+            <argument
+                android:name="questions_difficulty"
+                app:argType="string" />
+        </action>
+    </fragment>
 </navigation>

@@ -34,9 +34,7 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.startQuizBtn.setOnClickListener {
-            val action = StartFragmentDirections
-                .actionStartFragmentToLoadFragment(viewModel.countQuestions)
-            view.findNavController().navigate(action)
+            view.findNavController().navigate(R.id.action_startFragment_to_filterQuizFragment)
         }
 
         binding.historyBtn.setOnClickListener {

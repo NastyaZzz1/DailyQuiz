@@ -21,7 +21,9 @@ class LoadViewModel(private val savedStateHandle: SavedStateHandle): ViewModel()
     private var responseQuestion: List<Question> = emptyList()
     private val _questions = MutableLiveData<List<QuestionParse>>()
     val questions: LiveData<List<QuestionParse>> = _questions
-    val countQuestions = savedStateHandle.get<Int>("count_questions") ?: 0
+    private val countQuestions = 5
+    val selectedCategoryId = savedStateHandle.get<Int>("questions_category_id") ?: 0
+    val selectedDifficulty = savedStateHandle.get<String>("questions_difficulty") ?: ""
 
     companion object {
         const val BASE_URL = "https://opentdb.com/"
@@ -45,7 +47,12 @@ class LoadViewModel(private val savedStateHandle: SavedStateHandle): ViewModel()
 
         val service = retrofit.create(QuestionsService::class.java)
 
-        service.getQuestions(countQuestions, "multiple").enqueue (
+        service.getQuestions(
+            countQuestions,
+            "multiple",
+            selectedDifficulty,
+            selectedCategoryId
+        ).enqueue (
             object : Callback<ApiResponse> {
                 override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                     if (response.isSuccessful) { val apiResponse = response.body()
