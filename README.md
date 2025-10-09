@@ -58,3 +58,57 @@
 - Кнопка запуска: "Начать викторину" (активна после выбора параметров)
 
 ## 📁 Структура проекта
+
+``` bash
+com.nastya.dailyquiz/
+├── data/
+│   ├── local/
+│   │   ├── dao/
+│   │   │   └── HistoryDao.kt
+│   │   ├── database/
+│   │   │   ├── HistoryDatabase.kt
+│   │   │   └── TypeConverter.kt
+│   │   ├── entity/
+│   │   │   └── History.kt
+│   │   └── mapper/
+│   │       └── QuestionMapper.kt
+│   ├── remote/
+│   │   ├── api/
+│   │   │   └── QuestionsService.kt
+│   │   └── model/
+│   │       ├── ApiQuestion.kt
+│   │       └── ApiResponse.kt
+│   └── repository/
+│       └── QuestionRepository.kt
+├── domain/
+│   └── model/
+│       └── QuizQuestion.kt
+└── ui/
+    ├── start/
+    │   ├── StartFragment.kt
+    │   ├── StartViewModel.kt
+    │   └── StartViewModelFactory.kt
+    ├── filter/
+    │   ├── FilterQuizFragment.kt
+    │   └── FilterQuizViewModel.kt
+    ├── load/
+    │   ├── LoadFragment.kt
+    │   └── LoadViewModel.kt
+    ├── quiz/
+    │   ├── QuestionFragment.kt
+    │   └── QuestionViewModel.kt
+    ├── result/
+    │   ├── ResultFragment.kt
+    │   ├── ResultViewModel.kt
+    │   ├── ResultItemAdapter.kt
+    │   └── ResultViewModelFactory.kt
+    ├── history/
+    │   ├── HistoryItemAdapter.kt
+    │   ├── HistoryFragment.kt
+    │   ├── BlankHistoryFragment.kt
+    │   ├── HistoryViewModel.kt
+    │   ├── HistoryViewModelFactory.kt
+    │    └── HistoryDiffItemCallback.kt
+    └── main/
+        └── MainActivity.kt
+```
